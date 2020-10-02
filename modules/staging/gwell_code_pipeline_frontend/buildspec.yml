@@ -1,0 +1,41 @@
+version: 0.2
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
+phases:
+  install:
+    commands:
+      # - command
+      - npm install # we use ng build --prod to build the project for deployment. so to run ng command install angular-cli globally
+  #pre_build:
+    #commands:
+      # - command
+      # - command
+  build:
+    commands:
+      - npm install
+      - npm run build
+      # - command
+  #post_build:
+    #commands:
+      #- aws s3 sync s3://orlando-build-store/orlando-FE-build/angular-sample-project/ s3://orlando.phuyal.co.uk/
+      # - 
+artifacts:
+  files:
+    - '**/*'
+
+  discard-paths: no
+#artifacts:
+  #files:
+    # - location
+    # - location
+  #name: $(date +%Y-%m-%d)
+  #discard-paths: yes
+  base-directory: 'build*'
+#cache:
+  #general 
